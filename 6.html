@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style >
+
+        .imgBox{
+            border-top: 2px solid cadetblue;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+
+        }
+
+        .imgBox img{
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+            padding-top: 30px;
+
+        }
+        .p{
+            text-align: center;
+        }
+
+        .img1{
+            display: block;
+        }
+
+        .img2{
+            display: none;
+        }
+
+        .img3{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<p class="p">图片轮播</p>
+<div class="imgBox">
+    <img class="img-slide img1" src="image/1.jpg" alt="1">
+    <img class="img-slide img2" src="image/2.jpg" alt="2">
+    <img class="img-slide img3" src="image/3.jpg" alt="3">
+    <img class="img-slide img4" src="image/4.jpg" alt="4">
+    <img class="img-slide img5" src="image/5.jpg" alt="5">
+    <img class="img-slide img6" src="image/6.jpg" alt="6">
+    <img class="img-slide img7" src="image/7.jpg" alt="7">
+</div>
+</body>
+<script type="text/javascript">
+    var index=0;
+    //效果
+    function ChangeImg() {
+        index++;
+        var a=document.getElementsByClassName("img-slide");
+        if(index>=a.length) index=0;
+        for(var i=0;i<a.length;i++){
+            a[i].style.display='none';
+        }
+        a[index].style.display='block';
+    }
+    //设置定时器，每隔两秒切换一张图片
+    setInterval(ChangeImg,3000);
+</script>
+</html>
+
